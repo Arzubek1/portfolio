@@ -1,0 +1,23 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: var(--font-jetbrains-mono), monospace;
+  background: #001c34;
+}
+.container {
+  width: min(90%, 1400px);
+  margin: 0 auto;
+}
+input {
+ outline: none;
+ border: none;
+}
+button {
+cursor: pointer;
+}
+a {
+text-decoration: none;
+}
