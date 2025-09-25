@@ -14,12 +14,15 @@ const Welcome = () => {
       <div className="container">
         <div className={scss.content}>
           <div className={scss.image}>
-            <Image
-              src={"/images/myImage.jpeg"}
-              alt="I am"
-              width={320}
-              height={350}
-            />
+            <div className={scss.block}>
+              <Image
+                src={"/images/myImage.jpeg"}
+                alt="I am"
+                width={320}
+                height={350}
+              />
+              <div className={scss.bg}></div>
+            </div>
           </div>
           <div className={scss.myself}>
             <h5>Hello, I'm</h5>
@@ -27,6 +30,12 @@ const Welcome = () => {
             <h3>
               And I'm a <span>{}</span>
             </h3>
+            <p>
+              I'm a passionate fullstack developer with a love for clean
+              architecture, scalable design, and expressive UI. Every line of
+              code I write is a step toward becoming a senior engineer who
+              blends creativity with precision.
+            </p>
           </div>
         </div>
       </div>

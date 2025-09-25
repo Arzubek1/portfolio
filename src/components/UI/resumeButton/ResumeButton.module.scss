@@ -4,16 +4,17 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1.2rem;
+  gap: clamp(0.4rem, -0.572rem + 2.03vw, 1.2rem);
   color: white;
   width: 10vw;
   height: 6vh;
-  font-size: 16px;
+  font-size: clamp(0.75rem, 0.446rem + 0.63vw, 1rem);
   border: none;
   border-radius: 5px;
   background: rgb(4, 204, 154);
   position: relative;
   overflow: hidden;
+  flex-shrink: 0;
   .text,
   .icon {
     position: relative;
