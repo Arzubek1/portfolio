@@ -3,21 +3,36 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+html,
 body {
-  font-family: var(--font-jetbrains-mono), monospace;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: auto;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE */
   background: #001c34;
+  font-family: var(--font-jetbrains-mono), monospace;
 }
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
 .container {
   width: min(90%, 1400px);
   margin: 0 auto;
 }
 input {
- outline: none;
- border: none;
+  outline: none;
+  border: none;
 }
 button {
-cursor: pointer;
+  cursor: pointer;
 }
 a {
-text-decoration: none;
+  text-decoration: none;
 }

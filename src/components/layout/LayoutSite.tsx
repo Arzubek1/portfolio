@@ -21,7 +21,7 @@ const LayoutSite: FC<LayoutSiteProps> = ({children}) => {
     document.body.appendChild(light);
 
     const handleMouseMove = (e: MouseEvent) => {
-      light.style.background = `radial-gradient(circle at ${e.clientX}px ${e.clientY}px, rgba(255, 255, 255, .2), transparent 20%)`;
+      light.style.background = `radial-gradient(circle at ${e.clientX}px ${e.clientY}px,  rgba(2, 223, 205, 0.16), transparent 20%)`;
     };
 
     document.addEventListener("mousemove", handleMouseMove);

@@ -1,24 +1,27 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import scss from "./Welcome.module.scss";
 import Image from "next/image";
-
-const texts = [
+// texts start
+const texts: string[] = [
   "FullStack developer",
   "React / Next.js specialist",
   "Future Senior Dev in Progress",
 ];
+//texts end
 
+// Component start
 const Welcome = () => {
-  // for typewritter effect
-  const [textIndex, setTextIndex] = useState(0);
-  const [displayedText, setDisplayedText] = useState("");
-  const [isDeleting, setIsDeleting] = useState(false);
-  const [typingSpeed, setTypingSpeed] = useState(150);
-  // for typewritter effect
-  React.useEffect(() => {
+  // states for typewritter effect start
+  const [textIndex, setTextIndex] = useState<number>(0);
+  const [displayedText, setDisplayedText] = useState<string>("");
+  const [isDeleting, setIsDeleting] = useState<boolean>(false);
+  const [typingSpeed, setTypingSpeed] = useState<number>(150);
+  // states for typewritter effect end
+//useEffect for typewritter effect start
+  useEffect(() => {
     const handleTyping = () => {
-      const currentText = texts[textIndex]; 
+      const currentText = texts[textIndex];
       if (isDeleting) {
         setDisplayedText(currentText.substring(0, displayedText.length - 1));
         setTypingSpeed(75);
@@ -33,9 +36,11 @@ const Welcome = () => {
         setTextIndex((prev) => (prev + 1) % texts.length);
       }
     };
+
     const timer = setTimeout(handleTyping, typingSpeed);
     return () => clearTimeout(timer);
   }, [displayedText, isDeleting, textIndex, typingSpeed]);
+// useEffect for typewritter effect end
 
   return (
     <section className={scss.welcome}>
@@ -56,7 +61,8 @@ const Welcome = () => {
             <h5>Hello, I'm</h5>
             <h1>Arzubek Dzhuraev</h1>
             <h3>
-              And I'm a <span>{displayedText}</span> <span className={scss.cursor}></span>
+              And I'm a <span>{displayedText}</span>{" "}
+              <span className={scss.cursor}></span>
             </h3>
             <p>
               I'm a passionate fullstack developer with a love for clean

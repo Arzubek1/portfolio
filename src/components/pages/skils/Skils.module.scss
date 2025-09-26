@@ -1,0 +1,42 @@
+.skils {
+  padding: 100px 0;
+  color: #fff;
+
+  .content {
+    text-align: center;
+
+    h2 {
+      margin-bottom: 50px;
+      font-size: 2.5rem;
+    }
+  }
+
+  .skillsCircle {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    margin: 0 auto;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+
+    .skillItem {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: rotate(var(--angle)) translate(180px) rotate(calc(-1 * var(--angle)));
+      transform-origin: center center;
+      transition: transform 0.3s, color 0.3s;
+      background: rgba(0, 188, 212, 0.1);
+      padding: 8px 12px;
+      border-radius: 6px;
+      cursor: default;
+
+      &:hover {
+        background: #00bcd4;
+        color: #001c34;
+        transform: rotate(var(--angle)) translate(180px) rotate(calc(-1 * var(--angle))) scale(1.2);
+        z-index: 10;
+      }
+    }
+  }
+}
