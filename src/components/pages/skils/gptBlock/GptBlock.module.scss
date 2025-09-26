@@ -1,0 +1,23 @@
+.gptPopup {
+  position: absolute; // экран боюнча чыгып турат
+  top: 0; // координаттар hover’ден келет
+  right: 0;
+  background-color: #fff;
+  color: #000;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+  z-index: 1000;
+  width: 250px;
+
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    margin: 0.25rem 0;
+  }
+}
