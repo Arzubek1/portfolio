@@ -1,12 +1,31 @@
 .openSkills {
   padding-top: 4rem;
+  display: flex;
+  flex-direction: column;
   h4 {
     font-size: 1.2rem;
     font-weight: 300;
     margin-bottom: 2rem;
-    display: flex;
-    align-items: center;
+    width: auto;
     gap: 0.5rem;
-
+  }
+  .content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3.5rem;
+    width: 34vw;
+    .skillItem {
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+      h5 {
+        font-size: 0.9rem;
+        font-weight: 200;
+        span{
+            font-size: 0.7rem;
+            color: #167ae8;
+        }
+      }
+    }
   }
 }
