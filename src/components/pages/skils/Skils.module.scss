@@ -1,14 +1,14 @@
 .skils {
-  padding: 100px 0;
+  padding: 10rem 0;
   color: #fff;
 
+  h2 {
+    margin-bottom: 50px;
+    font-size: 2.5rem;
+    text-align: center;
+  }
   .content {
     text-align: center;
-
-    h2 {
-      margin-bottom: 50px;
-      font-size: 2.5rem;
-    }
   }
 
   .skillsCircle {
@@ -23,7 +23,8 @@
       position: absolute;
       top: 50%;
       left: 50%;
-      transform: rotate(var(--angle)) translate(180px) rotate(calc(-1 * var(--angle)));
+      transform: rotate(var(--angle)) translate(180px)
+        rotate(calc(-1 * var(--angle)));
       transform-origin: center center;
       transition: transform 0.3s, color 0.3s;
       background: rgba(0, 188, 212, 0.1);
@@ -34,7 +35,8 @@
       &:hover {
         background: #00bcd4;
         color: #001c34;
-        transform: rotate(var(--angle)) translate(180px) rotate(calc(-1 * var(--angle))) scale(1.2);
+        transform: rotate(var(--angle)) translate(180px)
+          rotate(calc(-1 * var(--angle))) scale(1.2);
         z-index: 10;
       }
     }
