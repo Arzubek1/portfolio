@@ -14,18 +14,30 @@ const Skils: FC = () => {
           </div>
           <div className={scss.mainContent}>
             <div className={scss.mainCircle}>
-              <span></span>
-              <div className={scss.js}><h3>JS</h3></div>
-              <div className={scss.html}><Image src={"/images/html.webp"} alt="img" width={56} height={56}/></div>
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
+              <div className={scss.js}>
+                <h3>JS</h3>
+              </div>
+              <Image
+                src={"/images/html.webp"}
+                alt="img"
+                width={56}
+                height={56}
+                className={scss.html}
+              />
+              <Image
+                src={"/images/css.png"}
+                alt="img"
+                width={50}
+                height={50}
+                className={scss.css}
+              />
+              <Image
+                src={"/images/react.png"}
+                alt="img"
+                width={56}
+                height={56}
+                className={scss.react}  
+                />
             </div>
           </div>
         </div>
