@@ -58,7 +58,7 @@ const Welcome = () => {
             </div>
           </div>
           <div className={scss.myself}>
-            <h5>Hello, I'm</h5>
+            <h5>Hello, my name is</h5>
             <h1>Arzubek Dzhuraev</h1>
             <h3>
               And I'm a <span>{displayedText}</span>{" "}

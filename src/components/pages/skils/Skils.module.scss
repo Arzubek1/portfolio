@@ -7,108 +7,37 @@
     text-align: center;
   }
   .content {
-    position: relative;
-
     .top {
       display: flex;
       justify-content: space-between;
+      padding-left: 5rem;
     }
 
     .mainContent {
       margin-top: 4rem;
       display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      z-index: 1;
-      .mainCircle {
-        will-change: transform;
-        width: 48rem;
-        height: 48rem;
-        border-radius: 50%;
-        background: transparent;
-        border: 3px solid rgba(255, 255, 255, 0.1);
-        box-shadow: inset 0 0 50px rgba(255, 255, 255, 0.1);
-        z-index: 1;
-
-        position: relative;
+      flex-direction: column;
+      gap: 2rem;
+      .mainTop {
+        flex-shrink: 0;
         display: flex;
         align-items: center;
         justify-content: center;
-        // radar style start
-        &::before {
-          content: "";
-          position: absolute;
-          inset: 13%;
-          border-radius: 50%;
-          border: 1px solid rgba(255, 255, 255, 0.1);
-          box-shadow: inset 0 0 50px rgba(255, 255, 255, 0.1);
-        }
-        &::after {
-          content: "";
-          position: absolute;
-          inset: 26%;
-          border-radius: 50%;
-          border: 1px solid rgba(255, 255, 255, 0.1);
-          box-shadow: inset 0 0 50px rgba(255, 255, 255, 0.1);
-        }
-
-        // orbital style start
-        .js {
-          position: absolute;
+        gap: 1rem;
+        .img{
           cursor: pointer;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-
-          width: 4rem;
-          height: 4rem;
-          border-radius: 50%;
-          background: rgb(219, 208, 2);
-          box-shadow: 0 0 15px rgba(241, 233, 3, 0.952);
-          z-index: 10;
-          h3 {
-            color: black;
-            font-size: 1.2rem;
-          }
         }
-        .html {
+      }
+      .mainBottom {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        flex-shrink: 0;
+        .img{
           cursor: pointer;
-          position: absolute;
-          z-index: 10;
-          top: -3.5%;
-
-          border-radius: 50%;
-          background: transparent;
-        }
-        .css {
-          cursor: pointer;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          position: absolute;
-          z-index: 10;
-          left: -3.5%;
-        }
-        .react {
-          cursor: pointer;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          position: absolute;
-          z-index: 10;
-          right: 19.5%;
-          transform: translateY(-12rem);
         }
       }
     }
-  }
-}
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
   }
 }
