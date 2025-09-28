@@ -2,6 +2,7 @@
 @import "swiper/css/pagination";
 @import "swiper/css/navigation";
 
+
 * {
   margin: 0;
   padding: 0;
@@ -27,7 +28,7 @@ body::-webkit-scrollbar {
 }
 
 .container {
-  width: min(90%, 1400px);
+  width: min(80%, 1400px);
   margin: 0 auto;
 }
 input {

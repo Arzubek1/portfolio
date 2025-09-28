@@ -1,8 +1,183 @@
 .projects {
+  background: #000;
+  padding-block: 5rem;
+  width: 100%;
+  min-height: 80vh;
   h2 {
     font-size: 2.9rem;
     text-align: center;
     font-weight: 300;
     color: #13b4f3;
   }
+  .first {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    perspective: 1000px;
+
+    .img {
+      position: relative;
+      z-index: 1;
+      width: 32rem;
+      aspect-ratio: 500 / 280; /* сүрөт пропорциясын сактайт */
+      overflow: hidden;
+      .icons {
+        position: absolute;
+        right: 0%;
+        bottom: 2%;
+        display: flex;
+        align-items: center;
+        .icon:nth-child(1) {
+          display: flex;
+          align-items: center;
+          justify-content: start;
+          gap: 6px;
+          height: 40px;
+          background: rgb(3, 89, 118);
+          border-radius: 20px;
+          width: 40px;
+          overflow: hidden;
+          transition: 0.3s ease;
+          span {
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 100%;
+            background: rgb(3, 89, 118);
+            color: white;
+            border-radius: 50%;
+            font-size: 2rem;
+          }
+          h4 {
+            flex-shrink: 0;
+            font-size: 0.9em;
+            font-weight: 300;
+            color: #f2f2f2;
+          }
+          &:hover {
+            width: 150px;
+          }
+        }
+        .icon:nth-child(2) {
+          transform: translateX(-10px);
+          display: flex;
+          align-items: center;
+          justify-content: start;
+          gap: 6px;
+          height: 40px;
+          background: rgb(149, 2, 132);
+          border-radius: 20px;
+          border: none;
+          width: 40px;
+          overflow: hidden;
+          transition: 0.3s ease;
+          span {
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 100%;
+            background: rgb(149, 2, 132);
+            color: white;
+            border-radius: 50%;
+            font-size: 2rem;
+          }
+          h4 {
+            flex-shrink: 0;
+            font-size: 0.9em;
+            font-weight: 300;
+            color: #f2f2f2;
+          }
+          &:hover {
+            width: 88px;
+          }
+        }
+        .icon:nth-child(3) {
+          transform: translateX(-20px);
+          display: flex;
+          align-items: center;
+          justify-content: start;
+          gap: 6px;
+          height: 40px;
+          background: #080101;
+          border-radius: 20px;
+          border: none;
+          width: 40px;
+          overflow: hidden;
+          transition: 0.3s ease;
+          span {
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 100%;
+            background: black;
+            color: white;
+            border-radius: 50%;
+          }
+          h4 {
+            flex-shrink: 0;
+            font-size: 0.9em;
+            font-weight: 300;
+            color: #f2f2f2;
+          }
+          &:hover {
+            width: 128px;
+          }
+        }
+        .icon:nth-child(1):hover ~ .icon:nth-child(2) {
+          transform: translateX(0);
+        }
+        .icon:nth-child(2):hover ~ .icon:nth-child(3) {
+          transform: translateX(-10px);
+        }
+      }
+    }
+    // .info {
+    //   flex-shrink: 0;
+    //   width: 34rem;
+    //   height: 24rem;
+    //   background:  #002f3486;
+    //   backdrop-filter: blur(6px);
+    //   transform: translateZ(-100px) translateX(-160px);
+    // }
+    // .info:hover {
+    //   animation: infoIn 0.8s ease-in-out forwards;
+    //   position: relative;
+    // }
+    // .info:not(:hover) {
+    //   position: relative;
+    //   animation: infoOut 0.8s ease-in-out forwards;
+    // }
+
+  }
 }
+// @keyframes infoIn {
+//   0% {
+//     transform: translateZ(-100px) translateX(-160px);
+//   }
+//   50% {
+//     transform: translateZ(30px) translateX(40px);
+//   }
+//   100% {
+//     transform: translateZ(90px) translateX(-160px);
+//     z-index: 2;
+//   }
+// }
+// @keyframes infoOut {
+//   0% {
+//     transform: translateZ(90px) translateX(-160px);
+//     z-index: 2;
+//   }
+//   50% {
+//     transform: translateZ(30px) translateX(40px);
+//   }
+//   100% {
+//     transform: translateZ(-100px) translateX(-160px);
+//     z-index: 0;
+//   }
+// }

@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import scss from "./Welcome.module.scss";
 import Image from "next/image";
+import OpenSkills from "../skils/openSkills/OpenSkills";
 // texts start
 const texts: string[] = [
   "FullStack developer",
@@ -70,6 +71,7 @@ const Welcome = () => {
               code I write is a step toward becoming a senior engineer who
               blends creativity with precision.
             </p>
+            <OpenSkills/>
           </div>
         </div>
       </div>
