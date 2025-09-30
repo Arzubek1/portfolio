@@ -12,7 +12,7 @@ interface NavItem {
 
 const navItems: NavItem[] = [
   { label: "About", href: "/" },
-  { label: "Skills", href: "/skills" },
+  { label: "Experience", href: "/skills" },
   { label: "Projects", href: "/projects" },
   { label: "Contact", href: "/contact" },
 ];
@@ -54,8 +54,12 @@ const Header: FC = () => {
           </h2>
           {/* mobileLogo end */}
 
+
+          {/* Right start */}
+          <div className={scss.right}>
+            
           <nav className={scss.nav}>
-            {navItems.map((item) => (
+            {navItems.map((item, idx) => (
               <Link
                 key={item.href}
                 href={item.href}
@@ -63,13 +67,10 @@ const Header: FC = () => {
                 onMouseEnter={() => setHovered(item.href)}
                 onMouseLeave={() => setHovered(null)}
               >
-                {item.label}
+                <span>{`0${idx + 1}.`}</span>{item.label}
               </Link>
             ))}
           </nav>
-
-          {/* Right start */}
-          <div className={scss.right}>
             {/* theme icon start*/}
             <div
               className={`${scss.themeIcon} ${!theme ? scss.dark : scss.light}`}

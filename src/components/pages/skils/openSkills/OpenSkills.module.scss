@@ -1,29 +1,37 @@
 .openSkills {
-  padding-top: 1rem;
   display: flex;
   flex-direction: column;
   h4 {
     font-size: 1.2rem;
     font-weight: 300;
-    margin-bottom: 2rem;
-    width: auto;
-    gap: 0.5rem;
+    margin-bottom: 1rem;
+    padding-inline: 2rem;
+    padding-block: 1rem;
+    background: #b5bf2a;
+    border-radius: 1rem;
+    color: #09335f;
   }
   .content {
     display: flex;
     flex-wrap: wrap;
     gap: 3.5rem;
-    width: 38vw;
+    padding: 3rem;
+    background: #012647c3;
+    border-radius: 2rem;
     .skillItem {
       display: flex;
       flex-direction: column;
       gap: 0.9rem;
+      color: white;
       h5 {
         font-size: 0.9rem;
         font-weight: 200;
-        span{
-            font-size: 0.7rem;
-            color: #167ae8;
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+        span {
+          font-size: 0.7rem;
+          color: #2abf2a;
         }
       }
     }

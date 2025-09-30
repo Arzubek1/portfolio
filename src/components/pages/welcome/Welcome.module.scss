@@ -1,14 +1,15 @@
 .welcome {
   width: 100%;
   min-height: 100vh;
-
+  margin-top: 8rem;
   .content {
-    padding-top: 16rem;
-    width: 100%;
+    width: 84%;
     height: 70vh;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 8.8rem;
+    margin: 0 auto;
     perspective: 1000px;
 
     .image {
@@ -72,21 +73,34 @@
       width: 680px;
       height: 360px;
       color: white;
-      h5 {
+      .hello {
         font-size: 0.9rem;
         font-weight: 300;
+        color: #13b4f3;
       }
       h1 {
         font-size: 3.5rem;
         font-weight: 600;
         color: rgb(168, 223, 2);
       }
+      p {
+        padding-top: 2rem;
+        width: 90%;
+        font-size: 1.1rem;
+        font-weight: 100;
+        line-height: 30.4px;
+        color: rgb(200, 200, 200);
+        padding: 1.5em;
+        background: #012647c3;
+        border-radius: 3rem;
+      }
       h3 {
         font-size: 1.3rem;
-
+        font-weight: 400;
+        color: rgb(191, 191, 192);
         .cursor {
           display: inline-block;
-          width: .9ch;
+          width: 0.9ch;
           height: 1.3em; // же line-height: inherit;
           background: rgb(168, 223, 2);
           vertical-align: bottom;
@@ -108,15 +122,6 @@
           color: rgb(168, 223, 2);
         }
       }
-      p {
-        padding-top: 2rem;
-        width: 90%;
-        font-size: 1.1rem;
-        font-weight: 100;
-        line-height: 30.4px;
-        color: rgb(200, 200, 200);
-      }
     }
   }
-
 }
