@@ -1,15 +1,27 @@
 .openSkills {
   display: flex;
   flex-direction: column;
+  @media (max-width: 572px) {
+    width: 100%;
+  }
+   @media (max-width: 472px) {
+    width: 106%;
+  }
   h4 {
     font-size: 1.2rem;
     font-weight: 300;
     margin-bottom: 1rem;
     padding-inline: 2rem;
     padding-block: 1rem;
-    background: #b5bf2a;
+    background: #98ff98;
     border-radius: 1rem;
     color: #09335f;
+    @media (max-width: 768px) {
+      padding: 0.4rem;
+      border-radius: 0.4rem;
+      font-size: 0.9rem;
+    }
+
   }
   .content {
     display: flex;
@@ -18,6 +30,14 @@
     padding: 3rem;
     background: #012647c3;
     border-radius: 2rem;
+    @media (max-width: 768px) {
+      padding: 1.4rem;
+      border-radius: 0.4rem;
+      flex-wrap: nowrap;
+    }
+    @media (max-width: 572px) {
+      justify-content: space-between;
+    }
     .skillItem {
       display: flex;
       flex-direction: column;
@@ -29,6 +49,9 @@
         display: flex;
         align-items: center;
         gap: 0.4rem;
+        @media (max-width: 768px) {
+          font-size: 0.7rem;
+        }
         span {
           font-size: 0.7rem;
           color: #2abf2a;

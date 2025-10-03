@@ -8,33 +8,64 @@
   top: 0;
   left: 0;
   z-index: 1000;
+  transition: all 0.3s ease;
+  @media (max-width: 768px) {
+    padding-inline: 1rem;
+    height: 70px;
+  }
+  @media (max-width: 572px) {
+    height: 56px;
+  }
+   @media (max-width: 452px) {
+    height: 46px;
+    padding-top: 8px;
+  }
+  
+  &.scrolled {
+    height: 70px;
+    padding-inline: 4rem;
+    padding-top: 12px;
+    background: #04334ba3;
+    @media (max-width: 768px) {
+      padding-inline: 2rem;
+      height: 60px;
+    }
+    @media (max-width: 572px) {
+      height: 50px;
+    }
+     @media (max-width: 452px) {
+      height: 46px;
+    }
+    
+  }
   .content {
     display: flex;
     align-items: center;
     justify-content: space-between;
+
     .desktopLogo {
       display: flex;
       align-items: center;
       justify-content: start;
-      font-size: clamp(1.375rem, -0.448rem + 3.8vw, 2.875rem);
       width: 16.2vw;
       height: 6vh;
-      font-weight: 900;
       color: white;
       cursor: pointer;
+      font-size: 2rem;
+      font-weight: 700;
       span {
-        color: #16adf9;
+        color: #00ffcc;
+      }
+      transition: transform 0.3s ease;
+      &:hover {
+        transform: scale(1.05);
+      }
+      @media (max-width: 572px) {
+        width: 7vw;
+        height: 2vh;
+        font-size: 1.7rem;
       }
     }
-    //mobileresponsive start
-    .mobileLogo {
-      display: none;
-      color: white;
-      span {
-        color: #16adf9;
-      }
-    }
-    //mobileresponsive end
 
     .right {
       display: flex;
@@ -42,8 +73,11 @@
       justify-content: flex-end;
       gap: 2rem;
       position: relative;
-      width: 18vw;
+      width: 14vw;
       height: 7vh;
+      @media (max-width: 768px) {
+        display: none;
+      }
       &::before {
         content: "";
         position: absolute;
@@ -56,8 +90,8 @@
       nav {
         display: flex;
         align-items: center;
-        gap: clamp(1.875rem, -2.366rem + 8.28vw, 3.8rem);
-        margin-right: 5rem;
+        gap: clamp(1.875rem, -2.366rem + 8.28vw, 3.2rem);
+        margin-right: 6rem;
         a {
           display: flex;
           align-items: end;
@@ -68,7 +102,7 @@
           text-decoration: none;
           transition: color 0.3s ease;
           font-weight: 100;
-          span{
+          span {
             font-size: 0.7rem;
             color: #167ae8;
           }
@@ -78,111 +112,96 @@
           color: rgb(164, 164, 164);
         }
       }
-      //theme icon start
-      .themeIcon {
-        width: 2.4rem;
-        height: 2.4rem;
-        border-radius: 50%;
-        box-shadow: 0 0 15px rgba(32, 31, 31, 0.952);
-        cursor: pointer;
-        position: relative;
-        transition: all 0.3s ease;
-        .sunIcon {
-          position: absolute;
-          top: 54%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          font-size: 1.2rem;
-          color: #f1f1f1;
-        }
-        .moonIcon {
-          position: absolute;
-          top: 54%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          font-size: 1.2rem;
-          color: #f1f1f1;
-        }
-      }
-      .dark {
-        background: #2c3e50;
-        box-shadow: 0 0 15px #34495e;
-      }
-      .light {
-        background: #f5cd8d;
-        box-shadow: 0 0 15px #facb9e;
-      }
-      //theme icon end
-      //mobileresponsive menu start
-      .mobileMenu_block {
-        .container input {
-          position: absolute;
-          opacity: 0;
-          cursor: pointer;
-          height: 0;
-          width: 0;
-        }
-        .container {
-          display: none;
-          position: relative;
-          cursor: pointer;
-          font-size: 20px;
-          user-select: none;
-        }
-        .checkmark {
-          position: relative;
-          top: 0;
-          left: 0;
-          height: 1.3em;
-          width: 1.3em;
-        }
-        .checkmark span {
-          width: 32px;
-          height: 2px;
-          background-color: white;
-          position: absolute;
-          transition: all 0.3s ease-in-out;
-          -webkit-transition: all 0.3s ease-in-out;
-          -moz-transition: all 0.3s ease-in-out;
-          -ms-transition: all 0.3s ease-in-out;
-          -o-transition: all 0.3s ease-in-out;
-        }
-        .checkmark span:nth-child(1) {
-          top: 10%;
-        }
-        .checkmark span:nth-child(2) {
-          top: 50%;
-        }
-        .checkmark span:nth-child(3) {
-          top: 90%;
-        }
-        .container input:checked + .checkmark span:nth-child(1) {
-          top: 50%;
-          transform: translateY(-50%) rotate(45deg);
-          -webkit-transform: translateY(-50%) rotate(45deg);
-          -moz-transform: translateY(-50%) rotate(45deg);
-          -ms-transform: translateY(-50%) rotate(45deg);
-          -o-transform: translateY(-50%) rotate(45deg);
-        }
-        .container input:checked + .checkmark span:nth-child(2) {
-          top: 50%;
-          transform: translateY(-50%) rotate(-45deg);
-          -webkit-transform: translateY(-50%) rotate(-45deg);
-          -moz-transform: translateY(-50%) rotate(-45deg);
-          -ms-transform: translateY(-50%) rotate(-45deg);
-          -o-transform: translateY(-50%) rotate(-45deg);
-        }
-        .container input:checked + .checkmark span:nth-child(3) {
-          transform: translateX(-50px);
-          -webkit-transform: translateX(-50px);
-          -moz-transform: translateX(-50px);
-          -ms-transform: translateX(-50px);
-          -o-transform: translateX(-50px);
-          opacity: 0;
-        }
-      }
-      //mobileresponsive menu end
     }
+    //mobileresponsive menu start
+    .mobileMenu_block {
+      display: none;
+      @media (max-width: 768px) {
+        display: flex;
+      }
+      .container input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+      }
+      .container {
+        position: relative;
+        cursor: pointer;
+        font-size: 20px;
+        user-select: none;
+      }
+      .checkmark {
+        position: relative;
+        top: 0;
+        left: 0;
+        height: 1.3em;
+        width: 1.3em;
+      }
+      .checkmark span {
+        width: 32px;
+        height: 2px;
+        background-color: rgb(224, 222, 222);
+        position: absolute;
+        transition: all 0.3s ease-in-out;
+        -webkit-transition: all 0.3s ease-in-out;
+        -moz-transition: all 0.3s ease-in-out;
+        -ms-transition: all 0.3s ease-in-out;
+        -o-transition: all 0.3s ease-in-out;
+        @media (max-width: 572px) {
+          width: 26px;
+          height: 1.4px;
+        }
+      }
+      .checkmark span:nth-child(1) {
+        top: 10%;
+        @media (max-width: 572px) {
+          top: 20%;
+          
+        }
+      }
+      .checkmark span:nth-child(2) {
+        top: 50%;
+        @media (max-width: 572px) {
+          top: 50%;
+          height: .8px;
+
+        }
+      }
+      .checkmark span:nth-child(3) {
+        top: 90%;
+        @media (max-width: 572px) {
+          top: 78%;
+          height: .8px;
+        }
+      }
+      .container input:checked + .checkmark span:nth-child(1) {
+        top: 50%;
+        transform: translateY(-50%) rotate(45deg);
+        -webkit-transform: translateY(-50%) rotate(45deg);
+        -moz-transform: translateY(-50%) rotate(45deg);
+        -ms-transform: translateY(-50%) rotate(45deg);
+        -o-transform: translateY(-50%) rotate(45deg);
+      }
+      .container input:checked + .checkmark span:nth-child(2) {
+        top: 50%;
+        transform: translateY(-50%) rotate(-45deg);
+        -webkit-transform: translateY(-50%) rotate(-45deg);
+        -moz-transform: translateY(-50%) rotate(-45deg);
+        -ms-transform: translateY(-50%) rotate(-45deg);
+        -o-transform: translateY(-50%) rotate(-45deg);
+      }
+      .container input:checked + .checkmark span:nth-child(3) {
+        transform: translateX(-50px);
+        -webkit-transform: translateX(-50px);
+        -moz-transform: translateX(-50px);
+        -ms-transform: translateX(-50px);
+        -o-transform: translateX(-50px);
+        opacity: 0;
+      }
+    }
+    //mobileresponsive menu end
   }
   .headerScrollBar {
     position: fixed;

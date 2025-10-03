@@ -1,0 +1,32 @@
+.footer {
+  width: 100%;
+  background: #001c34; // сен колдонгон түстөргө тууралап
+  color: #f1f1f1;
+  padding: 1rem 0;
+  margin-top: 0rem;
+  @media (max-width: 768px) {
+    margin-top: 1.2rem;
+    padding: 1rem 0;
+  }
+
+  .bottom {
+    padding-top: 1rem;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #aaa;
+    @media (max-width: 768px) {
+      font-size: 0.7rem;
+    }
+    @media (max-width: 379px) {
+      font-size: 0.5rem;
+    }
+    .made {
+      margin-top: 0.3rem;
+      font-size: 0.8rem;
+      color: #777;
+      @media (max-width: 768px) {
+        font-size: 0.5rem;
+      }
+    }
+  }
+}

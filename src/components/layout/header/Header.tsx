@@ -3,8 +3,10 @@ import Link from "next/link";
 import React, { FC, useEffect, useState } from "react";
 import scss from "./Header.module.scss";
 import ResumeButton from "@/components/UI/resumeButton/ResumeButton";
-import { IoSunny } from "react-icons/io5";
-import { RiMoonFill } from "react-icons/ri";
+import { useAppDispatch, useAppSelector } from "@/hooks/hooks";
+import { handleNavbar } from "@/toolkit/reduxSlice";
+import { motion } from "framer-motion";
+const MotionLink = motion(Link);
 interface NavItem {
   label: string;
   href: string;
@@ -17,20 +19,45 @@ const navItems: NavItem[] = [
   { label: "Contact", href: "/contact" },
 ];
 
+const textContainer = {
+  hidden: { opacity: 0, x: 20 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      staggerChildren: 0.3,
+    },
+  },
+};
+
+const textItem = {
+  hidden: { opacity: 0, x: 30 },
+  visible: { opacity: 1, x: 0 },
+};
 
 const Header: FC = () => {
   const [hovered, setHovered] = useState<string | null>(null);
-  const [theme, setTheme] = useState<boolean>(false);
+  const [scrolled, setScrolled] = useState<boolean>(false);
+  const { navbar } = useAppSelector((s) => s.navbarStore);
 
+  const dispatch = useAppDispatch();
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY;
-      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const docHeight =
+        document.documentElement.scrollHeight - window.innerHeight;
       const scrollPercent = (scrollTop / docHeight) * 100;
 
       const scrollBar = document.getElementById("scrollBar");
       if (scrollBar) {
         scrollBar.style.width = `${scrollPercent}%`;
+      }
+
+      // header shrink логика
+      if (scrollTop > 50) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
       }
     };
 
@@ -39,7 +66,7 @@ const Header: FC = () => {
   }, []);
 
   return (
-    <header className={scss.header}>
+    <header className={`${scss.header} ${scrolled ? scss.scrolled : ""}`}>
       <div className="container">
         <div className={scss.content}>
           {/* desktopLogo start */}
@@ -48,62 +75,51 @@ const Header: FC = () => {
           </h2>
           {/* desktopLogo end */}
 
-          {/* mobileLogo start */}
-          <h2 className={scss.mobileLogo}>
-            P<span>F</span>
-          </h2>
-          {/* mobileLogo end */}
-
-
           {/* Right start */}
           <div className={scss.right}>
-            
-          <nav className={scss.nav}>
-            {navItems.map((item, idx) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className={hovered === item.href ? scss.active : scss.inactive}
-                onMouseEnter={() => setHovered(item.href)}
-                onMouseLeave={() => setHovered(null)}
-              >
-                <span>{`0${idx + 1}.`}</span>{item.label}
-              </Link>
-            ))}
-          </nav>
-            {/* theme icon start*/}
-            <div
-              className={`${scss.themeIcon} ${!theme ? scss.dark : scss.light}`}
-              onClick={() => setTheme(!theme)}
+            <motion.nav
+              className={scss.nav}
+              variants={textContainer}
+              initial="hidden"
+              animate="visible"
             >
-              {theme ? (
-                <h3 className={scss.sunIcon}>
-                  <IoSunny />
-                </h3>
-              ) : (
-                <h3 className={scss.moonIcon}>
-                  <RiMoonFill />
-                </h3>
-              )}
-            </div>
-            {/* theme icon end*/}
+              {navItems.map((item, idx) => (
+                <MotionLink
+                variants={textItem}
+                  key={item.href}
+                  href={item.href}
+                  className={
+                    hovered === item.href ? scss.active : scss.inactive
+                  }
+                  onMouseEnter={() => setHovered(item.href)}
+                  onMouseLeave={() => setHovered(null)}
+                >
+                  <span>{`0${idx + 1}.`}</span>
+                  {item.label}
+                </MotionLink>
+              ))}
+            </motion.nav>
 
             <ResumeButton title="Resume" />
-
-            {/* mobileresponsiveMenu start */}
-            <div className={scss.mobileMenu_block}>
-              <label className={scss.container}>
-                <input type="checkbox" aria-label="Toggle mobile menu" />
-                <div className={scss.checkmark}>
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                </div>
-              </label>
-            </div>
-            {/* mobileresponsiveMenu end */}
           </div>
           {/* Right end */}
+          {/* mobileresponsiveMenu start */}
+          <div className={scss.mobileMenu_block}>
+            <label className={scss.container}>
+              <input
+                type="checkbox"
+                aria-label="Toggle mobile menu"
+                checked={navbar}
+                onChange={() => dispatch(handleNavbar(!navbar))}
+              />
+              <div className={scss.checkmark}>
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </label>
+          </div>
+          {/* mobileresponsiveMenu end */}
         </div>
       </div>
 

@@ -2,8 +2,11 @@
 import React, { useState, useEffect, useCallback, useMemo } from "react";
 import Image from "next/image";
 import scss from "./Welcome.module.scss";
+import { motion } from "framer-motion";
+import Navbar from "@/components/UI/navbar/Navbar";
+import { useAppSelector } from "@/hooks/hooks";
+import Title from "@/components/UI/title/Title";
 
-// texts сыртта (бир жолу гана түзүлөт)
 const texts = [
   "FullStack developer",
   "React / Next.js specialist",
@@ -19,7 +22,6 @@ function useTypewriter(
   const [textIndex, setTextIndex] = useState(0);
   const [displayedText, setDisplayedText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
-
   const currentWord = useMemo(() => words[textIndex], [words, textIndex]);
 
   const tick = useCallback(() => {
@@ -29,7 +31,6 @@ function useTypewriter(
       setDisplayedText(currentWord.substring(0, displayedText.length + 1));
     }
 
-    // токтогон учурлар
     if (!isDeleting && displayedText === currentWord) {
       setTimeout(() => setIsDeleting(true), pause);
     } else if (isDeleting && displayedText === "") {
@@ -46,13 +47,49 @@ function useTypewriter(
   return displayedText;
 }
 
+const textContainer = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      staggerChildren: 0.3,
+    },
+  },
+};
+
+const textItem = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0 },
+};
+
 const Welcome = () => {
   const displayedText = useTypewriter(texts);
+  const { navbar } = useAppSelector((s) => s.navbarStore);
+useEffect(() => {
+  if (navbar) {
+    document.documentElement.style.overflow = "hidden"; // <html>
+    document.body.style.overflow = "hidden";           // <body>
+  } else {
+    document.documentElement.style.overflow = "auto";
+    document.body.style.overflow = "auto";
+  }
+
+  return () => {
+    document.documentElement.style.overflow = "auto";
+    document.body.style.overflow = "auto";
+  };
+}, [navbar]);
 
   return (
     <section className={scss.welcome}>
       <div className="container">
+
+          <div className={scss.mobileTitle}>
+            <Title/>
+          </div>
         <div className={scss.content}>
+          {/* Сүрөт */}
           <div className={scss.image}>
             <div className={scss.block}>
               <Image
@@ -61,25 +98,34 @@ const Welcome = () => {
                 width={320}
                 height={350}
               />
-              {/* <div className={scss.bg}></div> */}
             </div>
           </div>
-          <div className={scss.myself}>
-            <h5 className={scss.hello}>Hello, my name is</h5>
-            <h1>Arzubek Dzhuraev</h1>
-            <h3>
+
+          {/* Тексттер */}
+          <motion.div
+            className={scss.myself}
+            variants={textContainer}
+            initial="hidden"
+            animate="visible"
+          >
+            <motion.h5 className={scss.hello} variants={textItem}>
+              Hello, my name is
+            </motion.h5>
+            <motion.h1 variants={textItem}>Arzubek Dzhuraev</motion.h1>
+            <motion.h3 variants={textItem}>
               And I'm a <span>{displayedText}</span>
               <span className={scss.cursor}></span>
-            </h3>
-            <p>
+            </motion.h3>
+            <motion.p variants={textItem}>
               I'm a passionate fullstack developer with a love for clean
               architecture, scalable design, and expressive UI. Every line of
               code I write is a step toward becoming a senior engineer who
               blends creativity with precision.
-            </p>
-          </div>
+            </motion.p>
+          </motion.div>
         </div>
       </div>
+      <Navbar />
     </section>
   );
 };

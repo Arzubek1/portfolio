@@ -1,5 +1,4 @@
 .resumeButton {
-  transform: translateX(2rem);
   font-family: var(--font-jetbrains-mono), monospace;
   display: flex;
   align-items: center;
@@ -40,6 +39,9 @@
   &:hover::before {
     animation: shine 1.5s ease-in-out infinite;
   }
+          @media (max-width: 768px) {
+          display: none;
+        }
 }
 @keyframes shine {
   0% {

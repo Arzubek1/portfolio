@@ -9,6 +9,8 @@ import {
   FaEnvelope,
 } from "react-icons/fa";
 import AnimatedTitle from "@/components/UI/animatedTitle/AnimatedTitle";
+import ResumeButton from "@/components/UI/resumeButton/ResumeButton";
+import Send from "@/components/UI/send/Send";
 
 const Contact = () => {
   return (
@@ -24,7 +26,7 @@ const Contact = () => {
           <div className={scss.animatedTitle}>
             <AnimatedTitle text="Contact"  delayStep={0.2} />
           </div>
-          <p>Let's build something awesome together</p>
+          <p>Let's build something awesome together!</p>
         </motion.div>
 
         <motion.form
@@ -34,40 +36,11 @@ const Contact = () => {
           transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
           viewport={{ once: true, amount: 0.5 }}
         >
-          <input type="text" placeholder="Your Name" required />
-          <input type="email" placeholder="Your Email" required />
+          <input type="text" placeholder="Name" required />
+          <input type="email" placeholder="Email" required />
           <textarea placeholder="Your Message" required></textarea>
-          <button type="submit">Send Message</button>
+          <Send/>
         </motion.form>
-
-        <motion.div
-          className={scss.socials}
-          initial={{ opacity: 0, y: 80 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, ease: "easeOut", delay: 0.4 }}
-          viewport={{ once: true, amount: 0.5 }}
-        >
-          <a
-            href="https://github.com/username"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <FaGithub />
-          </a>
-          <a
-            href="https://linkedin.com/in/username"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <FaLinkedin />
-          </a>
-          <a href="https://t.me/username" target="_blank" rel="noreferrer">
-            <FaTelegramPlane />
-          </a>
-          <a href="mailto:example@gmail.com">
-            <FaEnvelope />
-          </a>
-        </motion.div>
       </div>
     </section>
   );

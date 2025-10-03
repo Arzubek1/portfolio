@@ -2,6 +2,14 @@
   padding-block: 7rem;
   width: 100%;
   min-height: 80vh;
+
+  @media (max-width: 768px) {
+    padding-block: 1rem;
+    min-height: 60vh;
+  }
+  @media (max-width: 572px) {
+    padding-block: 4rem;
+  }
   .title {
     display: flex;
     align-items: center;
@@ -12,49 +20,118 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    gap: 6rem; // блоктордун аралыгы
+    gap: 6rem;
+    @media (max-width: 572px) {
+      flex-direction: column;
+      gap: 2rem;
+    }
     .project {
       display: flex;
       justify-content: center;
       align-items: center;
       width: 74%;
       gap: 2rem;
+      @media (max-width: 768px) {
+        width: 66%;
+      }
+      @media (max-width: 572px) {
+        gap: 0rem;
+      }
+
       &:nth-child(odd) {
-        flex-direction: row; // сүрөт оң жакта, текст сол жакта
+        flex-direction: row;
+        @media (max-width: 572px) {
+          flex-direction: column;
+        }
       }
 
       &:nth-child(even) {
-        flex-direction: row-reverse; // сүрөт сол жакта, текст оң жакта
+        flex-direction: row-reverse;
       }
+
       .img {
+        position: relative;
         z-index: 1;
         width: 32rem;
         aspect-ratio: 500 / 280;
         overflow: hidden;
+        border-radius: 12px;
+        cursor: pointer;
+        // overlay
+        &::after {
+          content: "";
+          position: absolute;
+          inset: 0;
+          background: rgba(0, 0, 0, 0.45);
+          opacity: 0;
+          transition: opacity 0.3s ease;
+        }
+
+        &:hover::after {
+          opacity: 1;
+        }
       }
+
       .info {
         flex-shrink: 0;
         width: 34rem;
         padding: 2rem;
         background: #002f3486;
         backdrop-filter: blur(6px);
-        border-radius: 16px;
+        border-radius: 2rem;
         color: #fff;
         margin-top: 6rem; // тепкич эффект
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+        &:hover {
+          transform: translateY(-5px);
+          box-shadow: 0px 8px 20px rgba(0, 255, 204, 0.2);
+        }
+        @media (max-width: 768px) {
+          width: 19rem;
+          padding: 1rem;
+          border-radius: 0.4rem;
+          margin-top: 3rem;
+        }
+        @media (max-width: 572px) {
+          margin-top: 1rem;
+          width: 29rem;
+        }
+        @media (max-width: 472px) {
+          width: 26rem;
+        }
+        @media (max-width: 432px) {
+          width: 23rem;
+        }
+         @media (max-width: 391px) {
+          width: 21rem;
+        }
+        
+        @media (max-width: 389px) {
+          width: 21rem;
+          padding: .8rem;
+        }
+        @media (max-width: 353px) {
+          width: 19rem;
+          padding: .8rem;
+        }
+
         h3 {
           font-size: 1.6rem;
           margin-bottom: 1rem;
-
           background: linear-gradient(
             90deg,
             rgba(131, 58, 180, 1) 0%,
             rgba(253, 29, 29, 1) 50%,
             rgba(252, 176, 69, 1) 100%
           );
-
           background-clip: text;
           -webkit-background-clip: text;
           color: transparent;
+          @media (max-width: 768px) {
+            font-size: 1.3rem;
+            margin-bottom: 0.2rem;
+          }
         }
 
         p {
@@ -63,6 +140,20 @@
           line-height: 24.4px;
           color: rgb(200, 200, 200);
           margin-bottom: 1.5rem;
+          @media (max-width: 768px) {
+            font-size: 0.6rem;
+            line-height: 18px;
+            margin-bottom: 0.8rem;
+          }
+          @media (max-width: 572px) {
+            font-size: 0.9rem;
+            line-height: 22px;
+          }
+           @media (max-width: 389px) {
+            font-size: 0.7rem;
+            line-height: 19px;
+          }
+          
         }
 
         .links {
@@ -71,6 +162,15 @@
             display: flex;
             gap: 1rem;
             width: 6rem;
+            @media (max-width: 768px) {
+              width: 4rem;
+              gap: 0.4rem;
+            }
+            @media (max-width: 472px) {
+              gap: 1.4rem;
+              width: 6rem;
+            }
+
             a {
               width: 2rem;
               height: 2rem;
@@ -78,6 +178,10 @@
               align-items: center;
               justify-content: center;
               transition: transform 0.3s ease;
+              @media (max-width: 768px) {
+                width: 1.4rem;
+                height: 1.4rem;
+              }
             }
 
             a:first-child {
@@ -89,28 +193,30 @@
 
             .github {
               color: #64ffda;
-
               &:hover {
                 transform: translateY(-0.13rem);
               }
             }
+
             &::after {
               content: "";
               position: absolute;
               right: -100%;
               top: 45%;
               width: inherit;
-              height: .8px;
+              height: 0.8px;
               border: none;
-              background:  #64ffda;
+              background: #64ffda;
             }
           }
+
           .icons {
             position: absolute;
             right: 0%;
             bottom: 8%;
             display: flex;
             align-items: center;
+
             .icon:nth-child(1) {
               display: flex;
               align-items: center;
@@ -122,6 +228,11 @@
               width: 40px;
               overflow: hidden;
               transition: 0.3s ease;
+              @media (max-width: 768px) {
+                width: 30px;
+                height: 30px;
+                gap: 0px;
+              }
               span {
                 flex-shrink: 0;
                 display: flex;
@@ -133,17 +244,31 @@
                 color: white;
                 border-radius: 50%;
                 font-size: 2rem;
+                @media (max-width: 768px) {
+                  width: 30px;
+                  height: 30px;
+                  font-size: 1.3rem;
+                }
               }
+
               h4 {
                 flex-shrink: 0;
                 font-size: 0.9em;
                 font-weight: 300;
                 color: #f2f2f2;
+                @media (max-width: 768px) {
+                  font-size: 0.6rem;
+                }
               }
+
               &:hover {
                 width: 150px;
+                @media (max-width: 768px) {
+                  width: 100px;
+                }
               }
             }
+
             .icon:nth-child(2) {
               transform: translateX(-10px);
               display: flex;
@@ -157,6 +282,10 @@
               width: 40px;
               overflow: hidden;
               transition: 0.3s ease;
+              @media (max-width: 768px) {
+                width: 30px;
+                height: 30px;
+              }
               span {
                 flex-shrink: 0;
                 display: flex;
@@ -168,17 +297,31 @@
                 color: white;
                 border-radius: 50%;
                 font-size: 2rem;
+                @media (max-width: 768px) {
+                  width: 30px;
+                  height: 30px;
+                  font-size: 1.3rem;
+                }
               }
+
               h4 {
                 flex-shrink: 0;
                 font-size: 0.9em;
                 font-weight: 300;
                 color: #f2f2f2;
+                @media (max-width: 768px) {
+                  font-size: 0.6rem;
+                }
               }
+
               &:hover {
                 width: 88px;
+                @media (max-width: 768px) {
+                  width: 70px;
+                }
               }
             }
+
             .icon:nth-child(3) {
               transform: translateX(-20px);
               display: flex;
@@ -192,6 +335,10 @@
               width: 40px;
               overflow: hidden;
               transition: 0.3s ease;
+              @media (max-width: 768px) {
+                width: 30px;
+                height: 30px;
+              }
               span {
                 flex-shrink: 0;
                 display: flex;
@@ -202,20 +349,35 @@
                 background: black;
                 color: white;
                 border-radius: 50%;
+                @media (max-width: 768px) {
+                  width: 30px;
+                  height: 30px;
+                  font-size: 1.3rem;
+                }
               }
+
               h4 {
                 flex-shrink: 0;
                 font-size: 0.9em;
                 font-weight: 300;
                 color: #f2f2f2;
+                @media (max-width: 768px) {
+                  font-size: 0.6rem;
+                }
               }
+
               &:hover {
                 width: 128px;
+                @media (max-width: 768px) {
+                  width: 96px;
+                }
               }
             }
+
             .icon:nth-child(1):hover ~ .icon:nth-child(2) {
               transform: translateX(0);
             }
+
             .icon:nth-child(2):hover ~ .icon:nth-child(3) {
               transform: translateX(-10px);
             }

@@ -1,9 +1,30 @@
 .about {
   padding-block: 3rem;
   min-height: 66vh;
-  .title{
-  margin-left: 20rem;
-
+  @media (max-width: 768px) {
+    padding-block: 0;
+  }
+  .title {
+    margin-left: -50rem;
+    @media (max-width: 1200px) {
+      margin-left: 8rem;
+    }
+    @media (max-width: 768px) {
+      margin-left: -25rem;
+    }
+    @media (max-width: 572px) {
+      margin-left: -17rem;
+    }
+    @media (max-width: 523px) {
+      margin-left: 0rem;
+    }
+     @media (max-width: 343px) {
+      margin-left: 1rem;
+    }
+    
+  }
+  @media (max-width: 768px) {
+    min-height: 53vh;
   }
   .content {
     display: flex;
@@ -12,6 +33,10 @@
     margin: 0 auto;
     gap: 3rem;
     width: 74%;
+    @media (max-width: 572px) {
+      flex-direction: column;
+      gap: 0.9rem;
+    }
     .info {
       width: 35vw;
       font-size: 0.9rem;
@@ -20,7 +45,47 @@
       color: rgb(200, 200, 200);
       padding: 2.4rem;
       background: #012647c3;
-      border-radius: 3rem;
+      border-radius: 2rem;
+      @media (max-width: 1200px) {
+        width: 40vw;
+      }
+      @media (max-width: 768px) {
+        display: none;
+      }
+    }
+    .infoMobile {
+      display: none;
+      width: 35vw;
+      font-size: 0.7rem;
+      font-weight: 100;
+      line-height: 21px;
+      color: rgb(200, 200, 200);
+      padding: 1.4rem;
+      background: #012647c3;
+      border-radius: 0.4rem;
+      @media (max-width: 768px) {
+        display: flex;
+      }
+      @media (max-width: 572px) {
+        width: 100%;
+      }
+      @media (max-width: 522px) {
+        padding: 0.3rem;
+        font-size: 0.8rem;
+      }
+      @media (max-width: 472px) {
+        width: 106%;
+      }
+      @media (max-width: 452px) {
+        font-size: 0.7rem;
+      }
+       @media (max-width: 379px) {
+        font-size: 0.68rem;
+      }
+      
+    }
+    @media (max-width: 1200px) {
+      width: 84%;
     }
   }
 }

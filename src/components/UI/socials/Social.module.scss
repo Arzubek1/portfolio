@@ -1,0 +1,32 @@
+.socials {
+  position: fixed;
+  bottom: 0; /* ар дайым төмөндө болот */
+  left: 3%;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* иконкалар ортого */
+  gap: 1.4rem;
+
+  a {
+    font-size: 1.2rem;
+    color: #64ffda;
+    transition: color 0.3s ease, transform 0.3s ease;
+
+    &:hover {
+      color: #18cda0;
+      transform: translateY(-3px);
+    }
+    @media (max-width: 572) {
+      font-size: 0.9rem;
+    }
+  }
+
+  &::after {
+    content: "";
+    display: block;
+    width: 1.6px;
+    height: 90px;
+    margin-top: 1rem;
+    background: #64ffda;
+  }
+}

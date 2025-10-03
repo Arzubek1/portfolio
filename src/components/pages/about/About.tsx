@@ -28,6 +28,19 @@ const About = () => {
             confident Full Stack Developer. I enjoy turning ideas into real
             projects, solving challenges, and exploring new technologies.
           </motion.p>
+          <motion.p
+            className={scss.infoMobile}
+            initial={{ opacity: 0, y: 200 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+            viewport={{ once: true, amount: 0.6 }}
+          >
+            I began my IT journey in August 2024 at Motion Web Academy. After
+            completing the Frontend track, I’m now focusing on Backend to become
+            a confident Full Stack Developer. I enjoy building projects, solving
+            challenges, and exploring new technologies.
+          </motion.p>
+
           <OpenSkills />
         </div>
       </div>
