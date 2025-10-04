@@ -8,7 +8,12 @@ interface ResumeButtonProps {
 
 const ResumeButton: FC<ResumeButtonProps> = ({ title }) => {
   return (
-    <a className={scss.resumeButton} href="/public/resume/Resume(el).pdf" download>
+    <a
+      className={scss.resumeButton}
+      href="/resume/Resume(el).pdf"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
       <span className={scss.text}>{title}</span>
       <span className={scss.icon}>
         <FaFileDownload />
