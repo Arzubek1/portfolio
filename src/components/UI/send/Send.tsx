@@ -1,10 +1,11 @@
 "use client";
-import React from "react";
+import React, { FC } from "react";
 import scss from "./Send.module.scss";
+
 
 const Send = () => {
   return (
-    <button className={scss.button}>
+    <button className={scss.button} type="submit" >
       <div className={scss.outline}></div>
 
       {/* Default state */}

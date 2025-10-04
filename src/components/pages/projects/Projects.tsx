@@ -55,7 +55,7 @@ const Projects = () => {
                     <FiExternalLink />
                   </a>
                   <a
-                    href="https://github.com/username/filmhub"
+                    href="https://github.com/Arzubek1/filmhub.git"
                     target="_blank"
                     className={scss.github}
                   >
