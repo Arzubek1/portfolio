@@ -13,7 +13,7 @@ const Navbar = () => {
   if (!navbar) return null; // display:none ордуна
 
   return (
-     <AnimatePresence>
+    <AnimatePresence>
       {navbar && (
         <motion.div
           className={scss.container}
@@ -31,25 +31,25 @@ const Navbar = () => {
             exit={{ x: "100%" }}
             transition={{ type: "tween", duration: 0.3 }}
           >
-            <a>
+            <a href="#about" onClick={() => dispatch(handleNavbar(false))}>
               <span>
                 <BsCaretRight />
               </span>
               About
             </a>
-            <a>
+            <a href="#" onClick={() => dispatch(handleNavbar(false))}>
               <span>
                 <BsCaretRight />
               </span>
               Experience
             </a>
-            <a>
+            <a href="#projects" onClick={() => dispatch(handleNavbar(false))}>
               <span>
                 <BsCaretRight />
               </span>
               Projects
             </a>
-            <a>
+            <a href="#contact" onClick={() => dispatch(handleNavbar(false))}>
               <span>
                 <BsCaretRight />
               </span>

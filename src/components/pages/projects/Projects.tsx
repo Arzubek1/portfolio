@@ -11,7 +11,7 @@ import { FiExternalLink, FiGithub } from "react-icons/fi";
 
 const Projects = () => {
   return (
-    <section className={scss.projects}>
+    <section className={scss.projects} id="projects">
       <div className="container">
         <div className={scss.title}>
           <AnimatedTitle text="Projects" delayStep={0.2} />

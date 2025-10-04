@@ -8,7 +8,7 @@ import OpenSkills from "../skils/openSkills/OpenSkills";
 
 const About = () => {
   return (
-    <section className={scss.about}>
+    <section className={scss.about} id="about">
       <div className="container">
         <div className={scss.title}>
           <AnimatedTitle text="About Me" delayStep={0.2} />

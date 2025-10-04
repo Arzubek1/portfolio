@@ -82,7 +82,7 @@ useEffect(() => {
 }, [navbar]);
 
   return (
-    <section className={scss.welcome}>
+    <section className={scss.welcome} id="/">
       <div className="container">
 
           <div className={scss.mobileTitle}>

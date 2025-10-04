@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { JetBrains_Mono } from "next/font/google";
+import { Inconsolata } from "next/font/google";
 import "@/styles/global.scss";
 import LayoutSite from "@/components/layout/LayoutSite";
 import { Providers } from "@/provider/Provider";
@@ -8,6 +9,10 @@ const jetBrainsMono = JetBrains_Mono({
   variable: "--font-jetbrains-mono",
   subsets: ["latin"],
 });
+const inconsolata = Inconsolata({
+  variable: "--font-inconsolata",
+  subsets: ["latin"]
+})
 
 export const metadata: Metadata = {
   title: "Arzubek | Fullstack Developer",
@@ -40,7 +45,7 @@ export default function RootLayout({
         <link rel="manifest" href="/site.webmanifest" />
       </head>
 
-      <body className={`${jetBrainsMono.variable}`}>
+      <body className={`${jetBrainsMono.variable} ${inconsolata.variable}`}>
         <Providers>
           <LayoutSite>{children}</LayoutSite>
         </Providers>
