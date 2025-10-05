@@ -111,6 +111,11 @@
           width: 21rem;
           padding: .8rem;
         }
+         @media (max-width: 361px) {
+          width: 18rem;
+          padding: .8rem;
+        }
+        
         @media (max-width: 353px) {
           width: 19rem;
           padding: .8rem;

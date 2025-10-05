@@ -5,6 +5,7 @@ import { BsCaretRight } from "react-icons/bs";
 import { useAppSelector, useAppDispatch } from "@/hooks/hooks";
 import { handleNavbar } from "@/toolkit/reduxSlice";
 import { motion, AnimatePresence } from "framer-motion";
+import ResumeButton from "../resumeButton/ResumeButton";
 
 const Navbar = () => {
   const { navbar } = useAppSelector((s) => s.navbarStore);
@@ -55,6 +56,7 @@ const Navbar = () => {
               </span>
               Contact
             </a>
+            <ResumeButton title="Resume"/>
           </motion.div>
         </motion.div>
       )}
