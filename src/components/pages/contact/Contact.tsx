@@ -49,8 +49,8 @@ const Contact: FC = () => {
       } else {
         await fetch(url);
         Swal.fire({
-          title: "Thank you!",
-          text: "Your message was sent successfully. I’ll get back to you soon!",
+          title: "Спасибо!",
+          text: "Ваше сообщение успешно отправлено. Я свяжусь с вами в ближайшее время!",
           icon: "success",
           confirmButtonText: "Ок",
         });
