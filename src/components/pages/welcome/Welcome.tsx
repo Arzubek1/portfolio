@@ -8,9 +8,9 @@ import { useAppSelector } from "@/hooks/hooks";
 import Title from "@/components/UI/title/Title";
 
 const texts = [
-  "FullStack developer",
-  "React / Next.js specialist",
-  "Future Senior Dev in Progress",
+  "FullStack разработчик",
+  "Специалист по React / Next.js",
+  "Будущий Senior разработчик",
 ];
 
 function useTypewriter(
@@ -66,28 +66,27 @@ const textItem = {
 const Welcome = () => {
   const displayedText = useTypewriter(texts);
   const { navbar } = useAppSelector((s) => s.navbarStore);
-useEffect(() => {
-  if (navbar) {
-    document.documentElement.style.overflow = "hidden"; // <html>
-    document.body.style.overflow = "hidden";           // <body>
-  } else {
-    document.documentElement.style.overflow = "auto";
-    document.body.style.overflow = "auto";
-  }
+  useEffect(() => {
+    if (navbar) {
+      document.documentElement.style.overflow = "hidden"; // <html>
+      document.body.style.overflow = "hidden"; // <body>
+    } else {
+      document.documentElement.style.overflow = "auto";
+      document.body.style.overflow = "auto";
+    }
 
-  return () => {
-    document.documentElement.style.overflow = "auto";
-    document.body.style.overflow = "auto";
-  };
-}, [navbar]);
+    return () => {
+      document.documentElement.style.overflow = "auto";
+      document.body.style.overflow = "auto";
+    };
+  }, [navbar]);
 
   return (
     <section className={scss.welcome} id="/">
       <div className="container">
-
-          <div className={scss.mobileTitle}>
-            <Title/>
-          </div>
+        <div className={scss.mobileTitle}>
+          <Title />
+        </div>
         <div className={scss.content}>
           {/* Сүрөт */}
           <div className={scss.image}>
@@ -109,18 +108,19 @@ useEffect(() => {
             animate="visible"
           >
             <motion.h5 className={scss.hello} variants={textItem}>
-              Hello, my name is
+              Здравствуйте, меня зовут
             </motion.h5>
-            <motion.h1 variants={textItem}>Arzubek Dzhuraev</motion.h1>
+            <motion.h1 variants={textItem}>Арзубек Джураев</motion.h1>
             <motion.h3 variants={textItem}>
-              And I'm a <span>{displayedText}</span>
+              И Я <span>{displayedText}</span>
               <span className={scss.cursor}></span>
             </motion.h3>
             <motion.p variants={textItem}>
-              I'm a passionate fullstack developer with a love for clean
-              architecture, scalable design, and expressive UI. Every line of
-              code I write is a step toward becoming a senior engineer who
-              blends creativity with precision.
+              Я — увлечённый Full Stack разработчик, который ценит чистую
+              архитектуру, масштабируемый дизайн и выразительный
+              пользовательский интерфейс. Каждая строка кода, которую я пишу, —
+              это шаг к тому, чтобы стать сеньор-инженером, сочетающим
+              креативность и точность.
             </motion.p>
           </motion.div>
         </div>

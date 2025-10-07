@@ -12,7 +12,7 @@ const OpenSkills = () => {
             transition={{ duration: 0.7, ease: "easeOut" }}
             viewport={{ once: true, amount: 0.6 }}
     >
-      <h4>Technical Skills:</h4>
+      <h4>Технические навыки:</h4>
       <div className={scss.content}>
         <div className={scss.skillItem}>
           <h5>

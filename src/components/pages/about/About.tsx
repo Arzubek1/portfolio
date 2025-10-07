@@ -21,12 +21,13 @@ const About = () => {
             transition={{ duration: 0.7, ease: "easeOut" }}
             viewport={{ once: true, amount: 0.6 }}
           >
-            I started my IT journey in August 2024 after discovering Motion Web
-            Academy, and quickly realized this was the right path for me. Over
-            13 months of learning, I completed the Frontend track and am now
-            focusing on the Backend, building my skills toward becoming a
-            confident Full Stack Developer. I enjoy turning ideas into real
-            projects, solving challenges, and exploring new technologies.
+            Я начал свой путь в IT в августе 2024 года, когда познакомился с
+            Motion Web Academy, и быстро понял, что это именно то направление,
+            которым я хочу заниматься. За 13 месяцев обучения я прошёл трек
+            Frontend и сейчас сосредоточен на Backend, развивая свои навыки,
+            чтобы стать уверенным Full Stack разработчиком. Мне нравится
+            воплощать идеи в реальные проекты, решать задачи и изучать новые
+            технологии.
           </motion.p>
           <motion.p
             className={scss.infoMobile}
@@ -35,10 +36,11 @@ const About = () => {
             transition={{ duration: 0.7, ease: "easeOut" }}
             viewport={{ once: true, amount: 0.6 }}
           >
-            I began my IT journey in August 2024 at Motion Web Academy. After
-            completing the Frontend track, I’m now focusing on Backend to become
-            a confident Full Stack Developer. I enjoy building projects, solving
-            challenges, and exploring new technologies.
+            Я начал свой путь в IT в августе 2024 года в Motion Web Academy.
+            После завершения трека по Frontend сейчас сосредоточен на изучении
+            Backend, чтобы стать уверенным Full Stack разработчиком. Мне
+            нравится создавать проекты, решать сложные задачи и изучать новые
+            технологии.
           </motion.p>
 
           <OpenSkills />

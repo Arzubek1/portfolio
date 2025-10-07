@@ -81,7 +81,7 @@ const Contact: FC = () => {
           <div className={scss.animatedTitle}>
             <AnimatedTitle text="Contact" delayStep={0.2} />
           </div>
-          <p>Let's build something awesome together!</p>
+          <p>Давайте создадим что-нибудь потрясающее вместе!</p>
         </motion.div>
 
         <motion.form

@@ -45,9 +45,9 @@ const Projects = () => {
             >
               <h3>FilmHub</h3>
               <p>
-                A movie search and information platform built using the Movie
-                API. Users can search for movies, view ratings, and access
-                detailed information.
+                Платформа для поиска фильмов и получения информации, созданная с
+                использованием Movie API. Пользователи могут искать фильмы,
+                просматривать рейтинги и получать подробную информацию.
               </p>
               <div className={scss.links}>
                 <div className={scss.toFilm}>

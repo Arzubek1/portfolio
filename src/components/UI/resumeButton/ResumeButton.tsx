@@ -10,9 +10,10 @@ const ResumeButton: FC<ResumeButtonProps> = ({ title }) => {
   return (
     <a
       className={scss.resumeButton}
-      href="/resume/Resume(el).pdf"
+      href="/resume/Арзубек-Джураев.pdf"
       target="_blank"
       rel="noopener noreferrer"
+      title="Резюме"
     >
       <span className={scss.text}>{title}</span>
       <span className={scss.icon}>
