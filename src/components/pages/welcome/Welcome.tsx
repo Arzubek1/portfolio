@@ -112,7 +112,7 @@ const Welcome = () => {
             </motion.h5>
             <motion.h1 variants={textItem}>Арзубек Джураев</motion.h1>
             <motion.h3 variants={textItem}>
-              И Я <span>{displayedText}</span>
+              и Я <span>{displayedText}</span>
               <span className={scss.cursor}></span>
             </motion.h3>
             <motion.p variants={textItem}>
