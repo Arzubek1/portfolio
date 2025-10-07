@@ -3,9 +3,9 @@ import { motion } from "framer-motion";
 import React, { useState, useEffect, useCallback, useMemo } from "react";
 
 const texts = [
-  "FullStack developer",
-  "React / Next.js specialist",
-  "Future Senior Dev in Progress",
+  "FullStack разработчик",
+  "Специалист по React / Next.js",
+  "Будущий Senior разработчик",
 ];
 
 function useTypewriter(
@@ -69,11 +69,11 @@ const Title = () => {
       animate="visible"
     >
       <motion.h5 className={scss.hello} variants={textItem}>
-        Hello, my name is
+       Здравствуйте, меня зовут
       </motion.h5>
-      <motion.h1 variants={textItem}>Arzubek Dzhuraev</motion.h1>
+      <motion.h1 variants={textItem}>Арзубек Джураев</motion.h1>
       <motion.h3 variants={textItem}>
-        And I'm a <span>{displayedText}</span>
+        и Я <span>{displayedText}</span>
         <span className={scss.cursor}></span>
       </motion.h3>
     </motion.div>

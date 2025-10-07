@@ -242,6 +242,9 @@
         width: 154px;
         height: 222px;
       }
+      @media (max-width: 431px) {
+        height: 222px;
+      }
 
       .hello {
         font-size: 0.9rem;
@@ -302,18 +305,21 @@
           font-size: 0.7rem;
           line-height: 21px;
         }
+        @media (max-width: 431px) {
+          font-size: 0.7rem;
+          line-height: 17px;
+        }
         @media (max-width: 380px) {
-          font-size: 0.68rem;
-          line-height: 21px;
+          font-size: 0.7rem;
+          line-height: 20px;
         }
         @media (max-width: 364px) {
           font-size: 0.64em;
           line-height: 19px;
         }
-    @media (max-width: 361px) {
-     line-height: 16.5px;
-
-    }
+        @media (max-width: 361px) {
+          line-height: 16.5px;
+        }
         @media (max-width: 343px) {
           font-size: 0.6rem;
         }
