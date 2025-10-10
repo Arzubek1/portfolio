@@ -6,6 +6,7 @@ import ResumeButton from "@/components/UI/resumeButton/ResumeButton";
 import { useAppDispatch, useAppSelector } from "@/hooks/hooks";
 import { handleNavbar } from "@/toolkit/reduxSlice";
 import { motion } from "framer-motion";
+import { useRouter } from "next/navigation";
 const MotionLink = motion(Link);
 interface NavItem {
   label: string;
@@ -39,7 +40,7 @@ const Header: FC = () => {
   const [hovered, setHovered] = useState<string | null>(null);
   const [scrolled, setScrolled] = useState<boolean>(false);
   const { navbar } = useAppSelector((s) => s.navbarStore);
-
+  const router = useRouter();
   const dispatch = useAppDispatch();
   useEffect(() => {
     const handleScroll = () => {
@@ -70,7 +71,7 @@ const Header: FC = () => {
       <div className="container">
         <div className={scss.content}>
           {/* desktopLogo start */}
-          <h2 className={scss.desktopLogo}>
+          <h2 className={scss.desktopLogo} onClick={() => router.push("/")}>
             Port<span>folio</span>
           </h2>
           {/* desktopLogo end */}
@@ -85,7 +86,7 @@ const Header: FC = () => {
             >
               {navItems.map((item, idx) => (
                 <MotionLink
-                variants={textItem}
+                  variants={textItem}
                   key={item.href}
                   href={item.href}
                   className={
