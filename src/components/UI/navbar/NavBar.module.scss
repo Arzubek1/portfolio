@@ -15,20 +15,25 @@
   @media (max-width: 432px) {
     top: 2.7rem;
   }
-  
+
   .navbar {
     padding: 3rem;
     display: flex;
     flex-direction: column;
     gap: 1.8rem;
     width: 40%;
-    height: 45%;
+    height: 55%;
     background: #041321e4;
     border-top-left-radius: 7px;
     border-bottom-left-radius: 7px;
     @media (max-width: 488px) {
       width: 60%;
     }
+    @media (max-width: 432px), (max-height: 932px){
+      height: 45%;
+    }
+    
+    
     a {
       display: flex;
       align-items: center;
@@ -45,10 +50,18 @@
     &:has(a:hover) a:not(:hover) {
       color: rgb(164, 164, 164);
     }
-    .socials{
+    .socials {
       display: flex;
       justify-content: space-between;
-      font-size: 1.4rem;
+      a {
+        font-size: 1.4rem;
+        @media (max-width: 424px) {
+          font-size: 1.1rem;
+        }
+        @media (max-width: 390px) {
+          font-size: 1rem;
+        }
+      }
     }
   }
 }

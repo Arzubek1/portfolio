@@ -19,7 +19,7 @@ const About = () => {
             initial={{ opacity: 0, y: 200 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: "easeOut" }}
-            viewport={{ once: true, amount: 0.6 }}
+            viewport={{ once: true, amount: 0.3 }}
           >
             Я начал свой путь в IT в августе 2024 года, когда познакомился с
             Motion Web Academy, и быстро понял, что это именно то направление,
@@ -34,7 +34,7 @@ const About = () => {
             initial={{ opacity: 0, y: 200 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: "easeOut" }}
-            viewport={{ once: true, amount: 0.6 }}
+            viewport={{ once: true, amount: 0.3 }}
           >
             Я начал свой путь в IT в августе 2024 года в Motion Web Academy.
             После завершения трека по Frontend сейчас сосредоточен на изучении

@@ -24,7 +24,7 @@ const Projects = () => {
               initial={{ opacity: 0, y: 100 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, ease: "easeOut" }}
-              viewport={{ once: true, amount: 0.5 }}
+              viewport={{ once: true, amount: 0.3 }}
             >
               <Image
                 src="/images/filmhubimg.png"
@@ -41,7 +41,7 @@ const Projects = () => {
               initial={{ opacity: 0, y: 100 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, ease: "easeOut" }}
-              viewport={{ once: true, amount: 0.5 }}
+              viewport={{ once: true, amount: 0.3 }}
             >
               <h3>FilmHub</h3>
               <p>

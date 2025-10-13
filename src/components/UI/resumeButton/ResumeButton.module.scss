@@ -16,7 +16,13 @@
   flex-shrink: 0;
       @media (max-width: 462px) {
      width: 40vw;
-     height: 4vh;
+     height: 6vh;
+     font-size: 1.2rem;
+    }
+     @media (max-width: 402px) {
+     width: 36vw;
+     height: 6vh;
+     font-size: 1.2rem;
     }
   .text,
   .icon {
