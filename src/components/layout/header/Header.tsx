@@ -14,10 +14,10 @@ interface NavItem {
 }
 
 const navItems: NavItem[] = [
-  { label: "About", href: "#about" },
-  { label: "Experience", href: "#" },
-  { label: "Projects", href: "#projects" },
-  { label: "Contact", href: "#contact" },
+  { label: "Главное", href: "#" },
+  { label: "Обо мне", href: "#about" },
+  { label: "Проекты", href: "#projects" },
+  { label: "Контакты", href: "#contact" },
 ];
 
 const textContainer = {

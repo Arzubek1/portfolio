@@ -35,6 +35,7 @@
     }
      @media (max-width: 452px) {
       height: 46px;
+      padding-inline: 1rem;
     }
     
   }
@@ -102,6 +103,7 @@
           text-decoration: none;
           transition: color 0.3s ease;
           font-weight: 100;
+          width: 100px;
           span {
             font-size: 0.7rem;
             color: #167ae8;

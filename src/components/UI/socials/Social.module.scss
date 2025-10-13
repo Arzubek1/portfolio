@@ -6,7 +6,9 @@
   flex-direction: column;
   align-items: center; /* иконкалар ортого */
   gap: 1.4rem;
-
+    @media (max-width: 572px) {
+      display: none;
+    }
   a {
     font-size: 1.2rem;
     color: #64ffda;
@@ -16,9 +18,7 @@
       color: #18cda0;
       transform: translateY(-3px);
     }
-    @media (max-width: 572) {
-      font-size: 0.9rem;
-    }
+
   }
 
   &::after {

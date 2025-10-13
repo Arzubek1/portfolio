@@ -11,7 +11,7 @@ const About = () => {
     <section className={scss.about} id="about">
       <div className="container">
         <div className={scss.title}>
-          <AnimatedTitle text="About Me" delayStep={0.2} />
+          <AnimatedTitle text="Обо мне" delayStep={0.2} />
         </div>
         <div className={scss.content}>
           <motion.p

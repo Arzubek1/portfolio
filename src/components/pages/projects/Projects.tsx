@@ -14,7 +14,7 @@ const Projects = () => {
     <section className={scss.projects} id="projects">
       <div className="container">
         <div className={scss.title}>
-          <AnimatedTitle text="Projects" delayStep={0.2} />
+          <AnimatedTitle text="Проекты" delayStep={0.2} />
         </div>
         <div className={scss.content}>
           <div className={scss.project}>

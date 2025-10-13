@@ -76,10 +76,10 @@ const Contact: FC = () => {
           initial={{ opacity: 0, y: 80 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: "easeOut" }}
-          viewport={{ once: true, amount: 0.5 }}
+          viewport={{ once: true, amount: 0.3 }}
         >
           <div className={scss.animatedTitle}>
-            <AnimatedTitle text="Contact" delayStep={0.2} />
+            <AnimatedTitle text="Контакт" delayStep={0.2} />
           </div>
           <p>Давайте создадим что-нибудь потрясающее вместе!</p>
         </motion.div>

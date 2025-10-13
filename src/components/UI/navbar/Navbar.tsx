@@ -6,6 +6,11 @@ import { useAppSelector, useAppDispatch } from "@/hooks/hooks";
 import { handleNavbar } from "@/toolkit/reduxSlice";
 import { motion, AnimatePresence } from "framer-motion";
 import ResumeButton from "../resumeButton/ResumeButton";
+import Socials from "../socials/Socials";
+import { FiGithub } from "react-icons/fi";
+import { SlSocialInstagram } from "react-icons/sl";
+import { RiTelegram2Line } from "react-icons/ri";
+import { LuLinkedin } from "react-icons/lu";
 
 const Navbar = () => {
   const { navbar } = useAppSelector((s) => s.navbarStore);
@@ -32,31 +37,66 @@ const Navbar = () => {
             exit={{ x: "100%" }}
             transition={{ type: "tween", duration: 0.3 }}
           >
-            <a href="#about" onClick={() => dispatch(handleNavbar(false))}>
-              <span>
-                <BsCaretRight />
-              </span>
-              About
-            </a>
             <a href="#" onClick={() => dispatch(handleNavbar(false))}>
               <span>
                 <BsCaretRight />
               </span>
-              Experience
+              Главное
+            </a>
+            <a href="#about" onClick={() => dispatch(handleNavbar(false))}>
+              <span>
+                <BsCaretRight />
+              </span>
+              Обо мне
             </a>
             <a href="#projects" onClick={() => dispatch(handleNavbar(false))}>
               <span>
                 <BsCaretRight />
               </span>
-              Projects
+              Проекты
             </a>
             <a href="#contact" onClick={() => dispatch(handleNavbar(false))}>
               <span>
                 <BsCaretRight />
               </span>
-              Contact
+              Контакты
             </a>
-            <ResumeButton title="Resume"/>
+            <ResumeButton title="Resume" />
+             <div className={scss.socials}>
+      <a
+        href="https://github.com/Arzubek1"
+        title="GitHub"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <FiGithub />
+      </a>
+      <a
+        href="https://www.instagram.com/dzhuraev_000/"
+        target="_blank"
+        rel="noopener noreferrer"
+        title="Instagram"
+      >
+        <SlSocialInstagram />
+      </a>
+      <a
+        className={scss.resumeButton}
+        href="https://web.telegram.org/a/"
+        target="_blank"
+        rel="noopener noreferrer"
+        title="Telegram"
+      >
+        <RiTelegram2Line />
+      </a>
+      <a
+        href="https://www.linkedin.com/in/arzubek-d-a5b69b37b/"
+        target="_blank"
+        rel="noopener noreferrer"
+        title="Linkedin"
+      >
+        <LuLinkedin />
+      </a>
+    </div>
           </motion.div>
         </motion.div>
       )}

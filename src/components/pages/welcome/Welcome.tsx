@@ -10,7 +10,7 @@ import Title from "@/components/UI/title/Title";
 const texts = [
   "FullStack разработчик",
   "Специалист по React / Next.js",
-  "Будущий Senior разработчик",
+  "Frontend разработчик",
 ];
 
 function useTypewriter(
